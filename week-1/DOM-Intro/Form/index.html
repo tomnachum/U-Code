@@ -8,19 +8,27 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <label for="name">Name</label>
-    <input type="text" id="name" />
+    <div class="container">
+      <h2>Hi User! Sign up</h2>
+      <div class="input">
+        <label for="name">Name</label>
+        <input type="text" id="name" />
+      </div>
+      <div class="input">
+        <label for="desired-salary">Desired Salary</label>
+        <input type="number" id="desired-salary" />
+      </div>
+      <div class="input">
+        <label for="birthday">Birthday</label>
+        <input type="date" id="birthday" />
+      </div>
 
-    <label for="desired-salary">Desired Salary</label>
-    <input type="number" id="desired-salary" />
-
-    <label for="birthday">Birthday</label>
-    <input type="date" id="birthday" />
-
-    <label for="phone">Phone</label>
-    <input type="text" id="phone" />
+      <div class="input">
+        <label for="phone">Phone</label>
+        <input type="text" id="phone" />
+      </div>
+      <button onclick="validate()">Submit</button>
+    </div>
     <script src="main.js"></script>
-
-    <button onclick="validate()">Submit</button>
   </body>
 </html>

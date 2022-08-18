@@ -1,0 +1,36 @@
+.container {
+  height: 300px;
+  width: 300px;
+  position: relative;
+  border: 0.5px solid #54bab9;
+  border-radius: 10px;
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  background-color: #f7ecde;
+}
+
+.input {
+  font-family: monospace;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  color: #54bab9;
+}
+
+.container > button {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  background-color: #54bab9;
+  border: none;
+  border-radius: 3px;
+  color: white;
+}
+
+.container > h2 {
+  font-family: monospace;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  color: #54bab9;
+}
