@@ -1,0 +1,21 @@
+body{
+    background-image: url("https://cdn.evergreenlandscapes.ca/wp-content/uploads/2018/06/grass.jpg.webp");
+}
+
+.title{
+    background-color: purple;
+    margin: 0;
+    padding: 10px;
+}
+
+#transparent{
+    opacity: 0.4;
+}
+
+.container{
+    width: 500px;
+}
+
+body{
+    margin: 0;
+}
