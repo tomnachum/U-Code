@@ -1,0 +1,23 @@
+.blue {
+  background-color: blue;
+  height: 300px;
+  width: 300px;
+  position: relative;
+}
+
+.red {
+  background-color: red;
+  position: absolute;
+}
+
+.vertical {
+  height: 300px;
+  width: 15px;
+  left: 40px;
+}
+
+.horizontal {
+  width: 300px;
+  height: 15px;
+  top: 40px;
+}
