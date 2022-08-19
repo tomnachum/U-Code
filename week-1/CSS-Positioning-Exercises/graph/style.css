@@ -1,0 +1,55 @@
+#container {
+  background-color: dodgerblue;
+  height: 300px;
+  width: 400px;
+  position: relative;
+}
+
+.col {
+  background-color: gray;
+  bottom: 5px;
+  width: 25px;
+  position: absolute;
+}
+
+#col1 {
+  height: 20px;
+  left: calc(25px * 1);
+}
+
+#col2 {
+  height: 130px;
+  left: calc(25px * 3);
+}
+
+#col3 {
+  height: 200px;
+  left: calc(25px * 5);
+}
+
+#col4 {
+  height: 170px;
+  left: calc(25px * 7);
+}
+
+#col5 {
+  height: 150px;
+  left: calc(25px * 9);
+}
+
+#col6 {
+  height: 129px;
+  left: calc(25px * 11);
+}
+
+.money {
+  position: absolute;
+  top: 5px;
+  left: 20px;
+}
+
+.time {
+  position: absolute;
+  bottom: 5px;
+  right: 20px;
+}
