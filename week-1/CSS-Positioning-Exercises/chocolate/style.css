@@ -1,0 +1,26 @@
+.chocolate-bar {
+  background-color: black;
+  height: 209px;
+  width: 400px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.chocolate-box {
+  background-color: #66320e;
+  height: 100px;
+  width: 96px;
+  float: left;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.strip {
+  background-color: darkred;
+  height: 5px;
+  width: 396px;
+  margin-left: 2px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  float: left;
+}
