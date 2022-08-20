@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  border: 2px solid black;
+  flex-direction: column;
+}
+
+.header {
+  background-color: lightblue;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+}
+
+.middle {
+  display: flex;
+}
+
+.menu {
+  background-color: plum;
+  border: 2px solid black;
+}
+
+.item {
+}
+
+.content {
+  background-color: pink;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.ad {
+  background-color: plum;
+  border: 2px solid black;
+}
+
+.footer {
+  background-color: lightblue;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+}
