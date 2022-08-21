@@ -34,11 +34,11 @@ function Tweeter() {
   const getPosts = () => _postsData;
 
   const addPost = (text) => {
-    _postsData[_postsIdCounter] = {
+    _postsData.push({
       text: text,
       id: `p${_postsIdCounter + 1}`,
       comments: [],
-    };
+    });
     _postsIdCounter += 1;
   };
 
@@ -57,7 +57,7 @@ function Tweeter() {
     }
     _postsData[postIdx].comments.push({
       text: text,
-      id: `c${_commentsIdCounter}`,
+      id: `c${_commentsIdCounter + 1}`,
     });
     _commentsIdCounter += 1;
   };
