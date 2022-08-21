@@ -1,4 +1,7 @@
 function Posts() {
+  let _postsIdCounter = 3 - 1; //TODO: change to 0
+  let _commentsIdCounter = 7 - 1; //TODO: change to 0
+
   let _postsData = [
     {
       text: "First post!",
@@ -23,18 +26,15 @@ function Posts() {
     },
   ];
 
-  let postsIdCounter = 3; //TODO: change to 0
-  let commentsIdCounter = 7; //TODO: change to 0
-
   const getPosts = () => _postsData;
 
   const addPost = (text) => {
-    _postsData[postsIdCounter] = {
+    _postsData[_postsIdCounter] = {
       text: text,
-      id: `p${postsIdCounter + 1}`,
+      id: `p${_postsIdCounter + 1}`,
       comments: [],
     };
-    postsIdCounter += 1;
+    _postsIdCounter += 1;
   };
 
   const removePost = (id) => {
@@ -44,5 +44,11 @@ function Posts() {
       return;
     }
     return _postsData.splice(toRemoveIdx, 1);
+  };
+
+  return {
+    getPosts,
+    addPost,
+    removePost,
   };
 }
