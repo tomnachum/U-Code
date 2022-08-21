@@ -1,4 +1,4 @@
-function Posts() {
+function Tweeter() {
   let _postsIdCounter = 3 - 1; //TODO: change to 0
   let _commentsIdCounter = 7 - 1; //TODO: change to 0
 
@@ -39,11 +39,17 @@ function Posts() {
 
   const removePost = (id) => {
     const toRemoveIdx = _postsData.findIndex((post) => post.id === id);
+    if (toRemoveIdx === -1) {
+      return;
+    }
     return _postsData.splice(toRemoveIdx, 1);
   };
 
   const addComment = (postId, text) => {
     const postIdx = _postsData.findIndex((post) => post.id === postId);
+    if (postIdx === -1) {
+      return;
+    }
     _postsData[postIdx].comments.push({
       text: text,
       id: `c${_commentsIdCounter}`,
@@ -53,9 +59,15 @@ function Posts() {
 
   const removeComment = (postId, commentId) => {
     const postIdx = _postsData.findIndex((post) => post.id === postId);
+    if (postIdx === -1) {
+      return;
+    }
     const commentIdx = _postsData[postIdx].comments.findIndex(
       (comment) => comment.id === commentId
     );
+    if (commentIdx === -1) {
+      return;
+    }
     return _postsData[postIdx].comments.splice(commentIdx, 1);
   };
 
