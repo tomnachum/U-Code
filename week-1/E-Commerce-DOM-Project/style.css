@@ -1,4 +1,4 @@
-.nav-bar {
+#nav-bar {
   background-color: lightblue;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -10,7 +10,7 @@
   display: grid;
 }
 
-.nav-bar > button {
+#nav-bar > button {
   border-color: white;
   font-family: cursive;
   background-color: transparent;

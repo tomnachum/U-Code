@@ -21,3 +21,9 @@ let products = [
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKqTFR3_ZH3GzXgzCL5liu4WvZoO3j6Y6G4UOBg4k&s",
   },
 ];
+
+document.getElementById("about-us").addEventListener("click", () => {
+  const aboutUs = document.createElement("p");
+  aboutUs.innerHTML = "We are the team, welcome to our website!";
+  document.getElementById("container").appendChild(aboutUs);
+});
