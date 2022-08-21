@@ -39,16 +39,31 @@ function Posts() {
 
   const removePost = (id) => {
     const toRemoveIdx = _postsData.findIndex((post) => post.id === id);
-    if (toRemoveIdx === -1) {
-      console.log(`There is no post with id of ${id}`);
-      return;
-    }
     return _postsData.splice(toRemoveIdx, 1);
+  };
+
+  const addComment = (postId, text) => {
+    const postIdx = _postsData.findIndex((post) => post.id === postId);
+    _postsData[postIdx].comments.push({
+      text: text,
+      id: `c${_commentsIdCounter}`,
+    });
+    _commentsIdCounter += 1;
+  };
+
+  const removeComment = (postId, commentId) => {
+    const postIdx = _postsData.findIndex((post) => post.id === postId);
+    const commentIdx = _postsData[postIdx].comments.findIndex(
+      (comment) => comment.id === commentId
+    );
+    return _postsData[postIdx].comments.splice(commentIdx, 1);
   };
 
   return {
     getPosts,
     addPost,
     removePost,
+    addComment,
+    removeComment,
   };
 }
