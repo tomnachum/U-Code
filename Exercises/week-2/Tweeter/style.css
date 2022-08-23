@@ -44,6 +44,7 @@ body {
   margin: 10px;
   border-radius: 5px;
   padding: 10px;
+  position: relative;
 }
 
 #post:active {
@@ -52,6 +53,7 @@ body {
 
 .post-text {
   font-weight: bold;
+  margin-top: 5px;
 }
 
 .comments {
@@ -67,15 +69,21 @@ body {
   padding: 5px;
   border-radius: 3px;
   font-size: 0.8em;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border: none;
+  height: 25px;
+  width: 25px;
+  box-shadow: 1px 1px 5px #2c3e50;
 }
 
 .delete-comment {
   cursor: pointer;
   color: #e74c3c;
+  float: left;
 }
 
-.comment-input {
-}
-
-.add-comment {
+.text-comment {
+  margin-left: 35px;
 }

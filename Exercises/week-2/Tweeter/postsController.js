@@ -1,16 +1,17 @@
 const tweeter = Tweeter();
 const renderer = Renderer();
 
-const posts = tweeter.getPosts();
-renderer.renderPosts(posts);
-
 function render() {
   renderer.renderPosts(tweeter.getPosts());
 }
 
+// click listener for post button
 function post() {
   const input = $("#input");
   const postText = input.val();
+  if (postText === "") {
+    return;
+  }
   input.val("");
   tweeter.addPost(postText);
   render();
@@ -28,6 +29,9 @@ $("#posts").on("click", ".add-comment", function () {
   const input = $(this).siblings(".comment-input");
   const text = input.val();
   input.val("");
+  if (text === "") {
+    return;
+  }
   const postId = $(this).closest(".post").attr("id");
   tweeter.addComment(postId, text);
   render();
