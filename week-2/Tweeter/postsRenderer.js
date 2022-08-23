@@ -12,6 +12,9 @@ function Renderer() {
           <div class="post" id="${id}">
               <p class="post-text">${text}</p>
               <div class="comments"></div>
+              <button class="delete">X</button>
+              <input type="text" placeholder="Write comment..." class="comment-input">
+              <button class="add-comment">></button>
           </div>
           `);
     _renderComments(comments, id);
@@ -20,8 +23,11 @@ function Renderer() {
   function _renderComments(comments, postId) {
     for (const comment of comments) {
       $(`#${postId}>.comments`).append(`
-              <p class="comment" id="${comment.d}">${comment.text}</p>
-              `);
+          <div class="comment" id="${comment.id}">
+            <p>${comment.text}</p>
+            <button class="delete-comment">X</button>
+          </div>
+          `);
     }
   }
 
