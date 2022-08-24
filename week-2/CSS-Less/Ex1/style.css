@@ -1,0 +1,70 @@
+.box,
+.container,
+.container .sign-up {
+  width: 200px;
+}
+.center,
+.container .sign-in,
+.container .sign-up {
+  display: grid;
+  justify-content: center;
+}
+.font,
+.container,
+.container .sign-in,
+.container .sign-in button,
+.container .sign-in input,
+.container .sign-up,
+.container .sign-up button {
+  font-family: cursive;
+  font-size: smaller;
+}
+.container {
+  background-color: #b41616;
+  height: 250px;
+  position: relative;
+  border-radius: 5px;
+}
+.container p {
+  color: white;
+  margin: 10px auto;
+}
+.container .sign-in button {
+  margin: 5px auto;
+  border-radius: 10px;
+  padding: 3px 25px;
+  border: none;
+  cursor: pointer;
+}
+.container .sign-in input {
+  border-radius: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+  padding-left: 7px;
+  border: none;
+}
+.container .sign-in input:focus-visible {
+  outline: 2px solid lightskyblue;
+}
+.container .sign-up {
+  background-color: darkred;
+  position: absolute;
+  bottom: 0;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.container .sign-up button {
+  padding: 5px 10px;
+  border-radius: 2px;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.container .sign-up button img {
+  height: 20px;
+  float: right;
+}
+.container .sign-up button div {
+  float: left;
+  margin-top: 2.5px;
+}
