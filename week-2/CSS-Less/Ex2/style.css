@@ -1,0 +1,24 @@
+body {
+  background-image: url("https://st2.depositphotos.com/5586578/11913/i/950/depositphotos_119134546-stock-photo-frame-of-herbs-and-spices.jpg");
+}
+.box {
+  height: 300px;
+  width: 600px;
+  background-color: rgba(41, 41, 104, 0.65);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.left-side {
+  padding: 30px;
+}
+.right-side {
+  padding: 30px;
+}
