@@ -1,0 +1,26 @@
+{
+    "name":"Cow",
+    "weight":{
+        "kilograms":750,
+        "tons":0.75
+    },
+    "location":"Asia",
+    "isEndangered": false,
+    "diet":[
+        {
+        "food":"grass",
+        "percentage": 60
+        },
+        {
+        "food": "corn",
+        "percentage": 20
+
+        },
+        {
+        "food": "alfalfa",
+        "percentage": 20
+        }
+    ],
+    "preditors":["woolf"],
+    "howDeliciousScale": 4
+}
