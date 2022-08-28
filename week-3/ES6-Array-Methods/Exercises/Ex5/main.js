@@ -230,3 +230,6 @@ const users = [
     },
   },
 ];
+
+const isAllLiveIn = users.every(u => u.address.city === "South Christy");
+console.log(isAllLiveIn);

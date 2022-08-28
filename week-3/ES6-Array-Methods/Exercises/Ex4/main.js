@@ -230,3 +230,7 @@ const users = [
     },
   },
 ];
+
+const filteredUsers = users.map(u => u.name).filter(n => n[0] === "C");
+
+console.log(filteredUsers);
