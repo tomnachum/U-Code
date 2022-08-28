@@ -230,3 +230,6 @@ const users = [
     },
   },
 ];
+
+let user = users.find(u => u.address.suite === "Apt. 950");
+console.log(user.company.name);
