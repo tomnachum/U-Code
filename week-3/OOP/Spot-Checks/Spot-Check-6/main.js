@@ -27,6 +27,9 @@ class Vehicle {
   }
 }
 
+// if we do not use new it raises an TypeError
+// let v = Vehicle(1, 2, 3, 4);
+
 let v = new Vehicle(1, 2, 3, 4);
 console.log(v.fuel);
 v.fuel = 200;
