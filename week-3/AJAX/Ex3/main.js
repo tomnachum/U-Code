@@ -1,7 +1,7 @@
-function fetch(ISBN) {
+function fetch(queryType, queryValue) {
   $.ajax({
     method: "GET",
-    url: `https://www.googleapis.com/books/v1/volumes?q=isbn:${ISBN}`,
+    url: `https://www.googleapis.com/books/v1/volumes?q=${queryType}:${queryValue}`,
     success: function (data) {
       data.items.forEach(item => {
         console.log(item);
