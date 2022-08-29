@@ -1,19 +1,40 @@
-const wisdom = JSON.parse(localStorage.wisdom || "[]");
-render();
+const wisdom = Model();
+const renderer = Renderer();
 
-$("#button").click(function () {
+wisdom.updateDataFromLS();
+renderer.render(wisdom.get());
+
+function getFromLS() {
+  wisdom.set(JSON.parse(localStorage.wisdom || "[]"));
+}
+
+function setToLS() {
+  if (wisdom.isEven()) {
+    localStorage.wisdom = JSON.stringify(wisdom.get());
+  }
+}
+
+function removeFromLS() {
+  localStorage.removeItem("wisdom");
+}
+
+$("#add-text-btn").click(function () {
   const inputElement = $("#input");
   const value = inputElement.val();
   inputElement.val("");
-  wisdom.push({ text: value });
-  render();
-  if (wisdom.length % 2 === 0) {
-    localStorage.wisdom = JSON.stringify(wisdom);
-  }
+  wisdom.add(value);
+  renderer.render(wisdom.get());
+  setToLS();
 });
 
-function render() {
-  const textDiv = $("#text");
-  textDiv.empty();
-  wisdom.map(t => `<p>${t.text}</p>`).forEach(p => textDiv.append(p));
-}
+$("#clear-btn").click(function () {
+  removeFromLS();
+  wisdom.clear();
+  renderer.render(wisdom.get());
+});
+
+$("#texts-container").on("click", "#text > button", function () {
+  const id = $(this).closest("#text").attr("id");
+  wisdom.remove(id);
+  renderer.render(wisdom.get());
+});
