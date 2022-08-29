@@ -9,3 +9,7 @@
   margin: 5px;
   border-radius: 5px;
 }
+
+.people:hover {
+  background-color: aqua;
+}
