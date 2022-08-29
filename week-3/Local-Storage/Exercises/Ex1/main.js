@@ -9,12 +9,10 @@ function getDataFromLS() {
 }
 
 function setDataToLS() {
-  if (wisdom.isEven()) {
-    localStorage.wisdom = JSON.stringify(wisdom.get());
-  }
+  localStorage.wisdom = JSON.stringify(wisdom.get());
 }
 
-function removeFromLS() {
+function removeDataFromLS() {
   localStorage.removeItem("wisdom");
 }
 
@@ -24,11 +22,13 @@ $("#add-text-btn").click(function () {
   inputElement.val("");
   wisdom.add(value);
   renderer.render(wisdom.get());
-  setDataToLS();
+  if (wisdom.isEven()) {
+    setDataToLS();
+  }
 });
 
 $("#clear-btn").click(function () {
-  removeFromLS();
+  removeDataFromLS();
   wisdom.clear();
   renderer.render(wisdom.get());
 });
@@ -36,5 +36,6 @@ $("#clear-btn").click(function () {
 $("#texts-container").on("click", ".text>button", function () {
   const id = +$(this).closest(".text").attr("id");
   wisdom.remove(id);
+  setDataToLS();
   renderer.render(wisdom.get());
 });
