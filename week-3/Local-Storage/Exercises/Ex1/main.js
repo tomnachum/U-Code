@@ -1,14 +1,14 @@
 const wisdom = Model();
 const renderer = Renderer();
 
-wisdom.updateDataFromLS();
+getDataFromLS();
 renderer.render(wisdom.get());
 
-function getFromLS() {
+function getDataFromLS() {
   wisdom.set(JSON.parse(localStorage.wisdom || "[]"));
 }
 
-function setToLS() {
+function setDataToLS() {
   if (wisdom.isEven()) {
     localStorage.wisdom = JSON.stringify(wisdom.get());
   }
@@ -24,7 +24,7 @@ $("#add-text-btn").click(function () {
   inputElement.val("");
   wisdom.add(value);
   renderer.render(wisdom.get());
-  setToLS();
+  setDataToLS();
 });
 
 $("#clear-btn").click(function () {
@@ -33,8 +33,8 @@ $("#clear-btn").click(function () {
   renderer.render(wisdom.get());
 });
 
-$("#texts-container").on("click", "#text > button", function () {
-  const id = $(this).closest("#text").attr("id");
+$("#texts-container").on("click", ".text>button", function () {
+  const id = +$(this).closest(".text").attr("id");
   wisdom.remove(id);
   renderer.render(wisdom.get());
 });

@@ -1,12 +1,14 @@
 function Model() {
   let _wisdom = [];
+  let _idCounter = 0;
 
   function set(arr) {
     _wisdom = arr;
   }
 
   function add(text) {
-    _wisdom.push({ id: _wisdom.length, text: text });
+    _wisdom.push({ id: _idCounter, text: text });
+    _idCounter += 1;
   }
 
   function get() {
