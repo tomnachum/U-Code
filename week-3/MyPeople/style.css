@@ -1,0 +1,9 @@
+#people-container {
+}
+
+.people {
+  background-color: grey;
+  padding: 30px;
+  margin: 5px;
+  border-radius: 5px;
+}
