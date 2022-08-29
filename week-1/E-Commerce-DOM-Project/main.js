@@ -1,4 +1,16 @@
-let cart = [];
+let cart = [
+  {
+    name: "car",
+    price: 50000,
+    img: "https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&width=1200",
+  },
+  {
+    name: "watch",
+    price: 150,
+    img: "https://m.media-amazon.com/images/I/81nC4u9eYfL._UY445_.jpg",
+  },
+];
+
 let products = [
   {
     name: "car",
@@ -22,8 +34,37 @@ let products = [
   },
 ];
 
-document.getElementById("about-us").addEventListener("click", () => {
-  const aboutUs = document.createElement("p");
-  aboutUs.innerHTML = "We are the team, welcome to our website!";
-  document.getElementById("container").appendChild(aboutUs);
+document.getElementById("about-us").addEventListener("click", function () {
+  render("We are the team, welcome to our website!");
 });
+
+document.getElementById("all-products").addEventListener("click", function () {
+  render(createProducts(products));
+});
+
+document.getElementById("cart-page").addEventListener("click", function () {
+  render(createProducts(cart));
+});
+
+function createProducts(products) {
+  let toRender = "";
+  products.forEach(
+    p =>
+      (toRender += `
+    <div class="product">
+      <p>${p.name}</p>
+      <p>${p.price}</p>
+      <img src="${p.img}">
+    </div>
+  `)
+  );
+  return toRender;
+}
+
+function render(innerHTML) {
+  const container = document.getElementById("content-container");
+  container.innerHTML = "";
+  const aboutUs = document.createElement("p");
+  aboutUs.innerHTML = innerHTML;
+  container.appendChild(aboutUs);
+}

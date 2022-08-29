@@ -16,3 +16,11 @@
   background-color: transparent;
   font-size: large;
 }
+
+.product > img {
+  height: 100px;
+}
+
+.product {
+  background-color: lightblue;
+}
