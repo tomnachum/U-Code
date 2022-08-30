@@ -9,6 +9,7 @@ let employeesArr = [
 //assuming id and age cannot be strings
 employeesArr.forEach(e => {
   if (
+    // !(e.id??false) || !(e.age??false)
     typeof (e.id ?? e.name) === "string" ||
     typeof (e.age ?? e.name) === "string"
   ) {
