@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@faker-js/faker": "^7.5.0",
     "validator": "^13.7.0"
   },
   "type": "module"

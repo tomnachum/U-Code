@@ -17,3 +17,16 @@ let blacklist = ["!", "?", ".", "@", "~", ",", "'"];
 let text = "I'M SO EXCITED!!!~!";
 //Ultimately, it should print "im so excited"
 console.log(validator.blacklist(text, blacklist).toLowerCase());
+
+import { faker } from "@faker-js/faker";
+function makeHuman(n) {
+  for (let i = 0; i < n; i++) {
+    console.log({
+      name: faker.name.firstName(),
+      img: faker.image.avatar(),
+      company: faker.company.name(),
+    });
+  }
+}
+
+makeHuman(2);
