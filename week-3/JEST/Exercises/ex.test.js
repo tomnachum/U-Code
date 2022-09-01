@@ -69,7 +69,7 @@ test("validate should return error if there are no boolean in the array", () => 
   const exercise = new Exercise();
   const mockData = [1, 2, 3];
   const returnedVal = exercise.validate(mockData);
-  expect(returnedVal).toBe({ error: "Need at least one boolean" });
+  expect(returnedVal).toStrictEqual({ error: "Need at least one boolean" });
 });
 
 test("validate should return true if there are more trues than falses in the array", () => {

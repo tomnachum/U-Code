@@ -18,6 +18,16 @@ class Exercise {
       .filter(c => symbols.indexOf(c) == -1)
       .join("");
   }
+
+  validate(arr) {
+    if (arr.some(e => typeof e === "boolean")) {
+      const trues = arr.filter(e => e === true).length;
+      const falses = arr.filter(e => e === false).length;
+      return trues > falses;
+    } else {
+      return { error: "Need at least one boolean" };
+    }
+  }
 }
 
 module.exports = Exercise;
