@@ -13,6 +13,16 @@ test("isEven should return true when n===1,-1", () => {
   expect(exercise.isEven(-1)).toBeFalsy();
 });
 
+test("isEven should raise an error when given undefined or null", () => {
+  const exercise = new Exercise();
+  expect(exercise.isEven(null)).toStrictEqual({
+    error: "isEven expects a number",
+  });
+  expect(exercise.isEven(undefined)).toStrictEqual({
+    error: "isEven expects a number",
+  });
+});
+
 //Ex2
 test("removeAtLeastOne should remove an item from non empty array", () => {
   const exercise = new Exercise();
@@ -26,6 +36,13 @@ test("removeAtLeastOne should not remove an item from empty array", () => {
   const mockData = [];
   returnedArr = exercise.removeAtLeastOne([...mockData]);
   expect(returnedArr.length).toBe(0);
+});
+
+test("removeAtLeastOne should raise an error when not given arr", () => {
+  const exercise = new Exercise();
+  expect(exercise.removeAtLeastOne()).toStrictEqual({
+    error: "removeAtLeastOne expects one parameter",
+  });
 });
 
 //Ex3
@@ -64,6 +81,13 @@ test("simplify should not remove anything from a string without symbols", () => 
   expect(returnedStr).toBe("");
 });
 
+test("simplify should raise an error when not get a string", () => {
+  const exercise = new Exercise();
+  expect(exercise.simplify(2)).toStrictEqual({
+    error: "simplify expects a string",
+  });
+});
+
 //Ex4
 test("validate should return error if there are no boolean in the array", () => {
   const exercise = new Exercise();
@@ -98,4 +122,11 @@ test("validate should return true if there are more trues than falses in the arr
   const mockData = [5, true, true, false, "hi"];
   const returnedVal = exercise.validate(mockData);
   expect(returnedVal).toBeTruthy();
+});
+
+test("validate should raise an error when getting more than one parameter", () => {
+  const exercise = new Exercise();
+  expect(exercise.validate([], 3)).toStrictEqual({
+    error: "validate expects one argument",
+  });
 });
