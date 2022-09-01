@@ -130,3 +130,12 @@ test("validate should raise an error when getting more than one parameter", () =
     error: "validate expects one argument",
   });
 });
+
+//Extension
+
+test("add should call push method", () => {
+  const exercise = new Exercise();
+  const spyOnPush = jest.spyOn(Array.prototype, "push");
+  exercise.add(1, 2);
+  expect(spyOnPush).toHaveBeenCalled();
+});

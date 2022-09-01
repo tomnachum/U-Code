@@ -28,6 +28,11 @@ class Exercise {
       return { error: "Need at least one boolean" };
     }
   }
+
+  add(x, y) {
+    let stuff = [];
+    stuff.push(x, y);
+  }
 }
 
 module.exports = Exercise;
