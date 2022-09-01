@@ -65,3 +65,37 @@ test("simplify should not remove anything from a string without symbols", () => 
 });
 
 //Ex4
+test("validate should return error if there are no boolean in the array", () => {
+  const exercise = new Exercise();
+  const mockData = [1, 2, 3];
+  const returnedVal = exercise.validate(mockData);
+  expect(returnedVal).toBe({ error: "Need at least one boolean" });
+});
+
+test("validate should return true if there are more trues than falses in the array", () => {
+  const exercise = new Exercise();
+  const mockData = [true, true, false];
+  const returnedVal = exercise.validate(mockData);
+  expect(returnedVal).toBeTruthy();
+});
+
+test("validate should return false if there are more falses than trues in the array", () => {
+  const exercise = new Exercise();
+  const mockData = [false, true, false];
+  const returnedVal = exercise.validate(mockData);
+  expect(returnedVal).toBeFalsy();
+});
+
+test("validate should return false if there are same number of falses and trues in the array", () => {
+  const exercise = new Exercise();
+  const mockData = [false, true];
+  const returnedVal = exercise.validate(mockData);
+  expect(returnedVal).toBeFalsy();
+});
+
+test("validate should return true if there are more trues than falses in the array, regardless to other elements", () => {
+  const exercise = new Exercise();
+  const mockData = [5, true, true, false, "hi"];
+  const returnedVal = exercise.validate(mockData);
+  expect(returnedVal).toBeTruthy();
+});
