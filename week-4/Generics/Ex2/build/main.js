@@ -30,9 +30,9 @@ example1.addNumber(1);
 example1.addNumber(18);
 console.log(example1.sum());
 const example2 = new Ex2();
-example1.addNumber("1");
-// example1.addNumber("ththth");
-example1.addNumber("18");
-example1.addNumber(18);
+example2.addNumber("1");
+example1.addNumber("ththth");
+example2.addNumber("10");
+example2.addNumber(10);
 console.log(example2.sum());
 //# sourceMappingURL=main.js.map
