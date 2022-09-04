@@ -1,11 +1,11 @@
-class Ex2<Type> {
-  public arr: Type[] = [];
+class Numbers<Type> {
+  constructor(public arr: Type[]) {}
 
   addNumber(elem: Type) {
     this.arr.push(elem);
   }
 
-  sum<Type>(): number {
+  sum(): number {
     let sum: number = 0;
     this.arr.forEach(elem => (sum += this.getNumValue(elem)));
     return sum;
@@ -23,15 +23,14 @@ class Ex2<Type> {
   }
 }
 
-const example1 = new Ex2();
-example1.addNumber(1);
-example1.addNumber(1);
-example1.addNumber(18);
-console.log(example1.sum());
+const numbers1: Numbers<string> = new Numbers<string>(["test", "22"]);
+numbers1.addNumber("55");
+numbers1.addNumber("block");
+numbers1.addNumber("9");
 
-const example2 = new Ex2();
-example2.addNumber("1");
-example1.addNumber("ththth");
-example2.addNumber("10");
-example2.addNumber(10);
-console.log(example2.sum());
+const numbers2: Numbers<number> = new Numbers<number>([23]);
+numbers2.addNumber(433);
+numbers2.addNumber(11);
+
+console.log(`1: ${numbers1.sum()}`);
+console.log(`2: ${numbers2.sum()}`);

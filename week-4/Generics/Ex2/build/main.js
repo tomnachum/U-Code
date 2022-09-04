@@ -1,7 +1,7 @@
 "use strict";
-class Ex2 {
-    constructor() {
-        this.arr = [];
+class Numbers {
+    constructor(arr) {
+        this.arr = arr;
     }
     addNumber(elem) {
         this.arr.push(elem);
@@ -24,15 +24,13 @@ class Ex2 {
         }
     }
 }
-const example1 = new Ex2();
-example1.addNumber(1);
-example1.addNumber(1);
-example1.addNumber(18);
-console.log(example1.sum());
-const example2 = new Ex2();
-example2.addNumber("1");
-example1.addNumber("ththth");
-example2.addNumber("10");
-example2.addNumber(10);
-console.log(example2.sum());
+const numbers1 = new Numbers(["test", "22"]);
+numbers1.addNumber("55");
+numbers1.addNumber("block");
+numbers1.addNumber("9");
+const numbers2 = new Numbers([23]);
+numbers2.addNumber(433);
+numbers2.addNumber(11);
+console.log(`1: ${numbers1.sum()}`);
+console.log(`2: ${numbers2.sum()}`);
 //# sourceMappingURL=main.js.map
