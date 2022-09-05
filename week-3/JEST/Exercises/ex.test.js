@@ -1,13 +1,13 @@
 const Exercise = require("./ex");
 
 //Ex1
-test("isEven should return true when n===2,0,-2", () => {
+test("isEven should return true when n is even", () => {
   const exercise = new Exercise();
   expect(exercise.isEven(2)).toBeTruthy();
   expect(exercise.isEven(0)).toBeTruthy();
 });
 
-test("isEven should return true when n===1,-1", () => {
+test("isEven should return false when n is odd", () => {
   const exercise = new Exercise();
   expect(exercise.isEven(1)).toBeFalsy();
   expect(exercise.isEven(-1)).toBeFalsy();
@@ -81,7 +81,7 @@ test("simplify should not remove anything from a string without symbols", () => 
   expect(returnedStr).toBe("");
 });
 
-test("simplify should raise an error when not get a string", () => {
+test("simplify should raise an error when argument is not a string", () => {
   const exercise = new Exercise();
   expect(exercise.simplify(2)).toStrictEqual({
     error: "simplify expects a string",
