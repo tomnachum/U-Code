@@ -39,7 +39,14 @@ def change_spaces(s):
 
 
 def number_of_spaces(s):
-    pass
+    return len([c for c in s if c == " "])
 
 
-print(number_of_spaces("my name is what"))
+# print(number_of_spaces("my name is what     "))
+
+
+def number_of_all_spaces(s):
+    return len([c for c in s if c.isspace()])
+
+
+print(number_of_spaces("my name is what     "))
