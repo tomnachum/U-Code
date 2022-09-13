@@ -29,6 +29,9 @@ class YouTubeLessonManager:
     def get_counts(self, name):
         return self.counter[self._edit_name(name)]
 
+    def get_most_popular_lesson(self):
+        return sorted(self.counter.items(), key=lambda item: item[1])[-1][0]
+
 
 lesson_manager = YouTubeLessonManager()
 lesson_manager.save("Dictionaries", "https://www.youtube.com/watch?v=OnDr4J2UXSA")
@@ -43,3 +46,4 @@ print(lesson_manager.get_counts("Dictionaries"))  # outputs: 2
 lesson_manager.get("For-Loops")
 lesson_manager.get("Loops")
 print(lesson_manager.get_counts("For-Loops"))
+print(lesson_manager.get_most_popular_lesson())
