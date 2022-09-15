@@ -13,14 +13,14 @@ def find_jobs_by_word(word):
 
 
 # Junior Jobs in Brooklin
-entry_level_agencys = set(
+entry_level_agencies = set(
     [job["agency"] for job in nyc_jobs if job["career_level"] == "Entry-Level"]
 )
-broadway_agencys = set(
+broadway_agencies = set(
     [job["agency"] for job in nyc_jobs if "Broadway" in job["work_location"]]
 )
-relevant_agencys = entry_level_agencys & broadway_agencys
-print(relevant_agencys)
+relevant_agencies = entry_level_agencies & broadway_agencies
+print(relevant_agencies)
 
 # Max Hourly Salary
 not_entry_level_salarys = set(
@@ -31,3 +31,13 @@ hourly_salarys = set(
 )
 max_salary = max(not_entry_level_salarys & hourly_salarys)
 print(max_salary)
+
+# Salaries in range
+agencies_in_range = set(
+    [
+        job["agency"]
+        for job in nyc_jobs
+        if float(job["salary_range_from"]) >= 17 and float(job["salary_range_to"]) <= 21
+    ]
+)
+print(agencies_in_range)
