@@ -21,11 +21,32 @@ def add(x, *, addition=0, more=0):
     return x + 1 + addition + more
 
 
+# should call once
 add(1, addition=0, more=0)
 add(1, more=0, addition=0)
 add(1, more=0)
 add(1)
+# should call again
 add(2)
+# should call again
 add(1, addition=5)
+# should call again
 add(1, addition=5, more=2)
 add(1, addition=5, more=2)
+
+
+@cache
+def sum(x, y=0, z=0):
+    print("sum is called")
+    return x + y + z
+
+
+# should call once
+sum(5)
+sum(5, 0)
+sum(5, 0, 0)
+# should call again
+sum(5, 2)
+sum(5, 2, 0)
+# should call again
+sum(5, 2, 1)
