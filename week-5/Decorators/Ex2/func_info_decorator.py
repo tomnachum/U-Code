@@ -1,4 +1,8 @@
+from functools import wraps
+
+
 def func_info(func):
+    @wraps(func)
     def inner(*args, **kwargs):
         try:
             result = func(*args, **kwargs)
