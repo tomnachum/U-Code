@@ -1,9 +1,13 @@
 import requests
 
+money = 1000
+
 
 def get_price(name):
     res = requests.get(f"http://localhost:8000/{name}").json()
-    print(res["price"])
+    price = res["price"]
+    print(price)
+    return price
 
 
 # get_price("table")
@@ -11,7 +15,13 @@ def get_price(name):
 
 
 def buy_item():
-    name = input("Which item do you want to buy?")
+    global money
+    name = input("Which item do you want to buy? ")
+    price = get_price(name)
+    if price > money:
+        print(f"You don't have enough money to buy {name}")
+        return
+    money -= price
     res = requests.get(f"http://localhost:8000/buy/{name}").json()
     item = res["item"]
     if item is not None:
