@@ -2,6 +2,8 @@ from fastapi import FastAPI
 import uvicorn
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
+import requests
+
 
 app = FastAPI()
 app.mount(
@@ -39,6 +41,12 @@ async def greet_user(username):
 @app.get("/optionalParameters/")
 async def query_params(name):
     return {"message": "Hi there {}".format(name)}
+
+
+@app.get("/book/{name}")
+async def get_book(name):
+    res = requests.get("https://www.googleapis.com/books/v1/volumes?q={}".format(name))
+    return res.json()
 
 
 if __name__ == "__main__":
