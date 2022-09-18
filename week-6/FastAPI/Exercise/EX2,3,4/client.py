@@ -32,4 +32,4 @@ def buy_item():
         print("There is no such item in store")
 
 
-# buy_item()
+buy_item()
