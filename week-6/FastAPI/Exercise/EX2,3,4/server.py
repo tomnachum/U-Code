@@ -22,5 +22,15 @@ def buy_item(name):
     return {"item": None}
 
 
+@app.get("/sale/")
+def sale(admin=False):
+    admin = True if admin == "true" else False
+    if admin:
+        for item in store:
+            if item["inventory"] > 10:
+                item["price"] *= 0.5
+    return store
+
+
 if __name__ == "__main__":
     uvicorn.run("server:app", host="0.0.0.0", port=8000, reload=True)
