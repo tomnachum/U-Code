@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 import uvicorn
 from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 
 app = FastAPI()
 app.mount(
@@ -10,9 +11,14 @@ app.mount(
 )
 
 
+# @app.get("/")
+# def root():
+#     return {"message": "Someone has made a request and accessed the server. Exciting!"}
+
+
 @app.get("/")
 def root():
-    return {"message": "Someone has made a request and accessed the server. Exciting!"}
+    return FileResponse("week-6\FastAPI\server_example\static/download.jpeg")
 
 
 @app.get("/maps")
