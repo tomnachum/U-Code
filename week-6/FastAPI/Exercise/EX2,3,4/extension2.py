@@ -1,7 +1,6 @@
 import schedule
 import time
 import requests
-from client import get_price, buy_item
 
 prev_price = 0
 

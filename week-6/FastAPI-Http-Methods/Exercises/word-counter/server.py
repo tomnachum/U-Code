@@ -1,5 +1,7 @@
 from fastapi import FastAPI, Body, Request, Response, status
 import uvicorn
+import re
+
 
 app = FastAPI()
 
@@ -27,6 +29,7 @@ def get_word_count(word):
 
 
 def add_word(word):
+    word = re.sub("[^A-Za-z]+", "", word).lower()
     if word in word_counter:
         word_counter[word] += 1
         return INCREMENTED
