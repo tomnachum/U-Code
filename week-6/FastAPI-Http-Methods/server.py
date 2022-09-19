@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 import uvicorn
 from fastapi import Request
+from fastapi import Body
 
 app = FastAPI()
 
@@ -28,7 +29,17 @@ async def create_wonder(request: Request):
     wonder = await request.json()
     wonder["ID"] = cur_id
     wonders.append(wonder)
-    return wonder
+    return "Created"
+
+
+@app.put("/wonders/{id}")
+def update_wonder(id, name=Body(...), location=Body(...)):
+    for w in wonders:
+        if w["ID"] == int(id):
+            w["name"] = name
+            w["location"] = location
+            return "Updated"
+    return "Not Updated"
 
 
 if __name__ == "__main__":
