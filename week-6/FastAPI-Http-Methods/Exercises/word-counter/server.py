@@ -1,11 +1,17 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Body, Request, Response, status
 import uvicorn
-from fastapi import Request
-from fastapi import Body
 
 app = FastAPI()
 
-word_counter = {"tom": 4}
+word_counter = {}
+
+CREATED = "Created"
+INCREMENTED = "Incremented"
+
+
+@app.get("/")
+def print_word_counter():
+    return word_counter
 
 
 @app.get("/sanity")
@@ -20,15 +26,44 @@ def get_word_count(word):
     return {"count": 0}
 
 
+def add_word(word):
+    if word in word_counter:
+        word_counter[word] += 1
+        return INCREMENTED
+    else:
+        word_counter[word] = 1
+        return CREATED
+
+
 @app.post("/word")
 async def create_word(request: Request):
     req = await request.json()
     word = req["word"]
-    if word in word_counter:
-        word_counter[word] += 1
-    else:
-        word_counter[word] = 1
-    return "Created"
+    return add_word(word)
+
+
+@app.post("/sentence/{sentence}")
+def create_sentence(sentence):
+    numNewWords, numOldWords = 0, 0
+    for w in sentence.split(" "):
+        op = add_word(w)
+        if op == INCREMENTED:
+            numOldWords += 1
+        elif op == CREATED:
+            numNewWords += 1
+    return {
+        "text": f"Added {numNewWords} words, {numOldWords} already existed",
+        "currentCount": -1,
+    }
+
+
+@app.delete("/word/{word}", status_code=200)
+def delete_word(word, response: Response):
+    if word not in word_counter:
+        response.status_code = 404
+        return f"{word} is not in DB."
+    del word_counter[word]
+    return f"{word} has been deleted properly."
 
 
 if __name__ == "__main__":
