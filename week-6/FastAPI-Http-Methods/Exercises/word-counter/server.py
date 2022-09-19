@@ -20,5 +20,16 @@ def get_word_count(word):
     return {"count": 0}
 
 
+@app.post("/word")
+async def create_word(request: Request):
+    req = await request.json()
+    word = req["word"]
+    if word in word_counter:
+        word_counter[word] += 1
+    else:
+        word_counter[word] = 1
+    return "Created"
+
+
 if __name__ == "__main__":
     uvicorn.run("server:app", host="0.0.0.0", port=8000, reload=True)
