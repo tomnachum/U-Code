@@ -6,6 +6,7 @@ import re
 app = FastAPI()
 
 word_counter = {}
+total_count = 0
 
 CREATED = "Created"
 INCREMENTED = "Incremented"
@@ -29,6 +30,8 @@ def get_word_count(word):
 
 
 def add_word(word):
+    global total_count
+    total_count += 1
     word = re.sub("[^A-Za-z]+", "", word).lower()
     if word in word_counter:
         word_counter[word] += 1
@@ -84,6 +87,11 @@ def get_5_most_popular():
         -AMOUNT_OF_POPULAR:
     ]
     return {"ranking": [{key: val} for key, val in most_5_popular]}
+
+
+@app.get("/total")
+def get_total_count():
+    return {"text": "Total count", "count": total_count}
 
 
 if __name__ == "__main__":
