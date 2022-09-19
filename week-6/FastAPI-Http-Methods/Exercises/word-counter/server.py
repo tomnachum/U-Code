@@ -69,5 +69,11 @@ def delete_word(word, response: Response):
     return f"{word} has been deleted properly."
 
 
+@app.get("/most-popular")
+def get_most_popular():
+    max_word = max(word_counter, key=word_counter.get)
+    return {"text": max_word, "count": word_counter[max_word]}
+
+
 if __name__ == "__main__":
     uvicorn.run("server:app", host="0.0.0.0", port=8000, reload=True)
