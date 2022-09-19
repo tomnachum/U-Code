@@ -75,5 +75,16 @@ def get_most_popular():
     return {"text": max_word, "count": word_counter[max_word]}
 
 
+AMOUNT_OF_POPULAR = 5
+
+
+@app.get("/most-5-popular")
+def get_5_most_popular():
+    most_5_popular = sorted(word_counter.items(), key=lambda pair: pair[1])[
+        -AMOUNT_OF_POPULAR:
+    ]
+    return {"ranking": [{key: val} for key, val in most_5_popular]}
+
+
 if __name__ == "__main__":
     uvicorn.run("server:app", host="0.0.0.0", port=8000, reload=True)
