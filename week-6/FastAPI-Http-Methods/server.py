@@ -42,5 +42,14 @@ def update_wonder(id, name=Body(...), location=Body(...)):
     return "Not Updated"
 
 
+@app.delete("/wonders/{id}")
+def delete_wonder(id):
+    for w in wonders:
+        if w["ID"] == int(id):
+            wonders.remove(w)
+            return "Deleted"
+    return "Not deleted"
+
+
 if __name__ == "__main__":
     uvicorn.run("server:app", host="0.0.0.0", port=8000, reload=True)
