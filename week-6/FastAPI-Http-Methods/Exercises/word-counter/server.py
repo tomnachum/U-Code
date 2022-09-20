@@ -63,9 +63,7 @@ def create_sentence(sentence):
             numOldWords += 1
         elif op == CREATED:
             numNewWords += 1
-    return {
-        "text": f"Added {numNewWords} words, {numOldWords} already existed",
-    }
+    return {"text": f"Added {numNewWords} words, {numOldWords} already existed"}
 
 
 @app.delete("/word/{word}", status_code=200)
