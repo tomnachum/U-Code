@@ -22,22 +22,27 @@ def root():
     return "server is running"
 
 
+def adjust_word(word):
+    return re.sub("[^A-Za-z]+", "", word).lower()
+
+
 @app.get("/word/{word}")
 def get_word_count(word):
-    if word in word_counter:
-        return {"count": word_counter[word]}
+    adjusted_word = adjust_word(word)
+    if adjusted_word in word_counter:
+        return {"count": word_counter[adjusted_word]}
     return {"count": 0}
 
 
 def add_word(word):
     global total_count
     total_count += 1
-    word = re.sub("[^A-Za-z]+", "", word).lower()
-    if word in word_counter:
-        word_counter[word] += 1
+    adjusted_word = adjust_word(word)
+    if adjusted_word in word_counter:
+        word_counter[adjusted_word] += 1
         return INCREMENTED
     else:
-        word_counter[word] = 1
+        word_counter[adjusted_word] = 1
         return CREATED
 
 
@@ -45,7 +50,8 @@ def add_word(word):
 async def create_word(request: Request):
     req = await request.json()
     word = req["word"]
-    return add_word(word)
+    add_word(word)
+    return {"text": "Added {word}", "currentCount": {word_counter[adjust_word(word)]}}
 
 
 @app.post("/sentence/{sentence}")
@@ -59,7 +65,6 @@ def create_sentence(sentence):
             numNewWords += 1
     return {
         "text": f"Added {numNewWords} words, {numOldWords} already existed",
-        "currentCount": -1,
     }
 
 
