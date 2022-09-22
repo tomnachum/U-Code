@@ -68,10 +68,11 @@ def create_sentence(sentence):
 
 @app.delete("/word/{word}", status_code=200)
 def delete_word(word, response: Response):
-    if word not in word_counter:
+    adjusted_word = adjust_word(word)
+    if adjusted_word not in word_counter:
         response.status_code = 404
         return f"{word} is not in DB."
-    del word_counter[word]
+    del word_counter[adjusted_word]
     return f"{word} has been deleted properly."
 
 
