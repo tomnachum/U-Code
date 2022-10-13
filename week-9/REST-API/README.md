@@ -503,14 +503,14 @@ PATCH http://api.movieapp.com/actors/257 HTTP/1.1
 
 ### 5. Remove an actor from a specific movie.
 
-DELETE /actors/:id/movie/:id
+DELETE /movies/:id/actors/:id
 
-Description: delete a movie from the list of movies of an actor.
+- Assuming that a movie has a list of actors
 
 Example:
 
 ```
-DELETE http://api.movieapp.com/actors/257/movie/56 HTTP/1.1
+DELETE http://api.movieapp.com/movies/256/actors/777 HTTP/1.1
 ```
 
 ---
@@ -521,14 +521,16 @@ DELETE http://api.movieapp.com/actors/257/movie/56 HTTP/1.1
 
 ### 6. Get the top 3 stars (most popular actors) of a specific movie.
 
-GET /actors/top3/movie/:id
+GET /movies/:id/actors
 
-Description: get the top 3 most popular actors in the given movie.
+Description: get the top n most popular actors in the given movie.
+
+Query params: top: number - n most popular actors.
 
 Example:
 
 ```
-GET http://api.movieapp.com/actors/top3/movie/56 HTTP/1.1
+GET http://api.movieapp.com/movies/256/actors?top=3 HTTP/1.1
 ```
 
 ---
