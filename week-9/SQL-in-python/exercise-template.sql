@@ -19,3 +19,9 @@ VALUES (null, 'Tomato', 3, 'Vegtables'),
     (null, 'Burger', 20, 'Meat'),
     (null, 'Chips', 3, 'Snacks'),
     (null, 'Doritos', 5, 'Snacks');
+SELECT name
+FROM products
+WHERE category = 'Vegtables';
+SELECT name
+FROM products
+WHERE id = 2;

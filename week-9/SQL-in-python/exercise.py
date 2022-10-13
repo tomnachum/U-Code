@@ -9,6 +9,8 @@ connection = pymysql.connect(
     cursorclass=pymysql.cursors.DictCursor,
 )
 
+################# Ex1
+
 # try:
 #     with connection.cursor() as cursor:
 #         query = "CREATE DATABASE grocery_store;"
@@ -50,3 +52,30 @@ connection = pymysql.connect(
 #         connection.commit()
 # except:
 #     print("DB Error")
+
+
+################# Ex2
+
+
+# try:
+#     with connection.cursor() as cursor:
+#         query = "SELECT name FROM products WHERE category = 'Vegtables';"
+#         cursor.execute(query)
+#         result = cursor.fetchall()
+#         print(type(result))
+#         print(result)
+# except:
+#     print("DB Error")
+
+
+################# Ex3
+
+try:
+    with connection.cursor() as cursor:
+        query = "SELECT name FROM products WHERE id = 2;"
+        cursor.execute(query)
+        result = cursor.fetchall()
+        print(type(result))
+        print(result)
+except:
+    print("DB Error")
