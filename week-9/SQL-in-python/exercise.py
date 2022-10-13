@@ -13,7 +13,9 @@ connection = pymysql.connect(
 
 # try:
 #     with connection.cursor() as cursor:
-#         query = "CREATE DATABASE grocery_store;"
+#         query = '''
+#         CREATE DATABASE grocery_store;
+#         '''
 #         cursor.execute(query)
 #         connection.commit()
 # except:
@@ -21,7 +23,11 @@ connection = pymysql.connect(
 
 # try:
 #     with connection.cursor() as cursor:
-#         query = "CREATE TABLE categories(name VARCHAR(22) NOT NULL PRIMARY KEY);"
+#         query = '''
+#         CREATE TABLE categories(
+#             name VARCHAR(22) NOT NULL PRIMARY KEY
+#             );
+#             '''
 #         cursor.execute(query)
 #         connection.commit()
 # except:
@@ -29,9 +35,13 @@ connection = pymysql.connect(
 
 # try:
 #     with connection.cursor() as cursor:
-#         query = (
-#             "INSERT INTO categories VALUES('Vegtables'),('Drinks'),('Meat'),('Snacks')"
-#         )
+#         query = '''
+#         INSERT INTO categories VALUES
+#         ('Vegtables'),
+#         ('Drinks'),
+#         ('Meat'),
+#         ('Snacks')
+#         '''
 #         cursor.execute(query)
 #         connection.commit()
 # except:
@@ -39,7 +49,14 @@ connection = pymysql.connect(
 
 # try:
 #     with connection.cursor() as cursor:
-#         query = "CREATE TABLE products(id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,name VARCHAR(22),price INT,category VARCHAR(22),FOREIGN KEY(category) REFERENCES categories(name));"
+#         query = '''
+#         CREATE TABLE products(
+#             id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+#             name VARCHAR(22),
+#             price INT,
+#             category VARCHAR(22),
+#             FOREIGN KEY(category) REFERENCES categories(name));
+#             '''
 #         cursor.execute(query)
 #         connection.commit()
 # except:
@@ -47,7 +64,15 @@ connection = pymysql.connect(
 
 # try:
 #     with connection.cursor() as cursor:
-#         query = "INSERT INTO products VALUES (null, 'Tomato', 3, 'Vegtables'),(null, 'Beer', 8, 'Drinks'),(null, 'Water', 5, 'Meat'),(null, 'Burger', 20, 'Meat'),(null, 'Chips', 3, 'Snacks'),(null, 'Doritos', 5, 'Snacks');"
+#         query = '''
+#         INSERT INTO products VALUES
+#         (null, 'Tomato', 3, 'Vegtables'),
+#         (null, 'Beer', 8, 'Drinks'),
+#         (null, 'Water', 5, 'Meat'),
+#         (null, 'Burger', 20, 'Meat'),
+#         (null, 'Chips', 3, 'Snacks'),
+#         (null, 'Doritos', 5, 'Snacks');
+#         '''
 #         cursor.execute(query)
 #         connection.commit()
 # except:
@@ -59,7 +84,12 @@ connection = pymysql.connect(
 
 # try:
 #     with connection.cursor() as cursor:
-#         query = "SELECT name FROM products WHERE category = 'Vegtables';"
+#         category = "Vegtables"
+#         query = f'''
+#         SELECT name
+#         FROM products
+#         WHERE category = '{category}';
+#         '''
 #         cursor.execute(query)
 #         result = cursor.fetchall()
 #         print(type(result))
@@ -72,7 +102,12 @@ connection = pymysql.connect(
 
 try:
     with connection.cursor() as cursor:
-        query = "SELECT name FROM products WHERE id = 2;"
+        id = 2
+        query = f"""
+        SELECT name 
+        FROM products 
+        WHERE id = {id};
+        """
         cursor.execute(query)
         result = cursor.fetchall()
         print(type(result))
