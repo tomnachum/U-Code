@@ -27,13 +27,13 @@ def sort_by_letters(word):
 
 
 def groupByAnagramsImproved(words):
-    equivalent_classes = defaultdict(lambda: [])
+    equivalent_classes = defaultdict(lambda: set())
     for word in words:
         sorted_word = sort_by_letters(word)
-        equivalent_classes[sorted_word].append(word)
+        equivalent_classes[sorted_word].add(word)
     return list(equivalent_classes.values())
 
 
 if __name__ == "__main__":
     print(groupByAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))
-    print(groupByAnagramsImproved(["eat", "tea", "tan", "ate", "nat", "bat"]))
+    print(groupByAnagramsImproved(["eat", "tea", "tan", "ate", "nat", "bat", "eat"]))
