@@ -10,7 +10,6 @@ export const randomCounterSlice = createSlice({
       state.value += Math.random();
     },
     increment: state => {
-      console.log("in random increment");
       state.value += 1;
     },
   },

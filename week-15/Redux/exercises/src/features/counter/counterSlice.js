@@ -37,10 +37,16 @@ export const counterSlice = createSlice({
     },
     decrement: state => {
       state.value -= 1;
+      if (state.value % 10 == 0) {
+        state.value += 1;
+      }
     },
     // Use the PayloadAction type to declare the contents of `action.payload`
     incrementByAmount: (state, action) => {
       state.value += action.payload;
+      if (state.value % 10 == 0) {
+        state.value += 1;
+      }
     },
   },
   // The `extraReducers` field lets the slice handle actions defined elsewhere,
