@@ -1,0 +1,21 @@
+body {
+  font-family: sans-serif;
+  background-color: #ecf0f1;
+}
+
+#weatherBox {
+  height: 300px;
+  width: 300px;
+}
+
+.freezing {
+  background-color: aqua;
+}
+
+.fair {
+  background-color: orange;
+}
+
+.hell-scape {
+  background-color: red;
+}
