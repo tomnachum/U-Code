@@ -1,0 +1,1 @@
+{"version":3,"file":"Asset.js","sourceRoot":"","sources":["../../src/Actual-classes/Asset.ts"],"names":[],"mappings":";AAAA,MAAM,KAAK;IACT,YACS,aAAqB,EACrB,KAAa,EACb,MAAc;QAFd,kBAAa,GAAb,aAAa,CAAQ;QACrB,UAAK,GAAL,KAAK,CAAQ;QACb,WAAM,GAAN,MAAM,CAAQ;IACpB,CAAC;IAEJ,MAAM,CAAC,OAAgB;QACrB,OAAO,CAAC,UAAU,CAAC,IAAI,CAAC,CAAC;IAC3B,CAAC;CACF"}
