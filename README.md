@@ -28,24 +28,24 @@ In this repo you can find all the exercises given along the course. The projects
 </p>
 
 <p float="left">
-    <img src="Public/images/Technologies/jquery.png" width="150" />
+    <img src="Public/images/Technologies/jquery.png" width="150" style="margin-right:30px" />
     <img src="Public/images/Technologies/handlebars.png" width="150" />
 </p>
 
 <p float="left">
+    <img src="Public/images/Technologies/typescript.png" width="80" style="margin-right:30px" />
     <img src="Public/images/Technologies/jest.png" width="100" />
-    <img src="Public/images/Technologies/typescript.png" width="80" />
 </p>
 
 <p float="left">
-    <img src="Public/images/Technologies/react.png" width="150" />
+    <img src="Public/images/Technologies/react.png" width="150" style="margin-right:30px" />
     <img src="Public/images/Technologies/redux.png" width="150" />
 </p>
 
 
 ### Backend:
 <p float="left">
-    <img src="Public/images/Technologies/python.png" width="80" />
+    <img src="Public/images/Technologies/python.png" width="80" style="margin-right:30px"/>
     <img src="Public/images/Technologies/fast.png" width="200" />
 </p>
 
@@ -54,13 +54,13 @@ In this repo you can find all the exercises given along the course. The projects
 </p>
 
 <p float="left">
-    <img src="Public/images/Technologies/sql.png" width="80" />
+    <img src="Public/images/Technologies/sql.png" width="80" style="margin-right:30px"/>
     <img src="Public/images/Technologies/mysql.png" width="140" />
 </p>
 
 ### Tools:
 <p float="left">
-    <img src="Public/images/Technologies/git.png" width="120" />
-    <img src="Public/images/Technologies/postman.png" width="80" />
+    <img src="Public/images/Technologies/git.png" width="120"  style="margin-right:30px"/>
+    <img src="Public/images/Technologies/postman.png" width="80" style="margin-right:30px"/>
     <img src="Public/images/Technologies/vsc.png" width="70" />
 </p>
