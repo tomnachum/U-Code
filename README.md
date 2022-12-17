@@ -20,35 +20,47 @@ In this repo you can find all the exercises given along the course. The projects
 </p>
 
 ## Technologies and Tools
-Frontend:
+### Frontend:
+<p float="left">
+    <img src="Public/images/Technologies/html.png" width="100" />
+    <img src="Public/images/Technologies/css.png" width="100" />
+    <img src="Public/images/Technologies/js.png" width="88" />
+</p>
 
-<img src="Public/images/Technologies/html.png" width="100" />
-<img src="Public/images/Technologies/css.png" width="100" />
-<img src="Public/images/Technologies/js.png" width="100" />
+<p float="left">
+    <img src="Public/images/Technologies/jquery.png" width="150" />
+    <img src="Public/images/Technologies/handlebars.png" width="150" />
+</p>
 
-<img src="Public/images/Technologies/jquery.png" width="100" />
-<img src="Public/images/Technologies/handlebars.png" width="100" />
+<p float="left">
+    <img src="Public/images/Technologies/jest.png" width="100" />
+    <img src="Public/images/Technologies/typescript.png" width="80" />
+</p>
 
-<img src="Public/images/Technologies/jest.png" width="100" />
-<img src="Public/images/Technologies/typescript.png" width="100" />
+<p float="left">
+    <img src="Public/images/Technologies/react.png" width="150" />
+    <img src="Public/images/Technologies/redux.png" width="150" />
+</p>
 
-<img src="Public/images/Technologies/react.png" width="100" />
-<img src="Public/images/Technologies/redux.png" width="100" />
 
-Backend:
+### Backend:
+<p float="left">
+    <img src="Public/images/Technologies/python.png" width="80" />
+    <img src="Public/images/Technologies/fast.png" width="200" />
+</p>
 
-<img src="Public/images/Technologies/python.png" width="100" />
-<img src="Public/images/Technologies/fast.png" width="100" />
+<p float="left">
+    <img src="Public/images/Technologies/pytest.png" width="110" />
+</p>
 
-<img src="Public/images/Technologies/pytest.png" width="100" />
+<p float="left">
+    <img src="Public/images/Technologies/sql.png" width="80" />
+    <img src="Public/images/Technologies/mysql.png" width="140" />
+</p>
 
-<img src="Public/images/Technologies/sql.png" width="100" />
-<img src="Public/images/Technologies/mysql.png" width="100" />
-
-Tools:
-
-<img src="Public/images/Technologies/git.png" width="100" />
-
-<img src="Public/images/Technologies/postman.png" width="100" />
-
-<img src="Public/images/Technologies/vsc.png" width="100" />
+### Tools:
+<p float="left">
+    <img src="Public/images/Technologies/git.png" width="120" />
+    <img src="Public/images/Technologies/postman.png" width="80" />
+    <img src="Public/images/Technologies/vsc.png" width="70" />
+</p>
