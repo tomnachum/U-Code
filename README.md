@@ -7,7 +7,7 @@ A training program designed for copmuter science graduates, to become full-stack
 
 The bootcamp took 4 months, in which we learned new technologies every day, built individual projects, participated in hackathon, and created final project in groups. 
 
-In addition, we learned how to work with agile methodologies, got code reviews by course staff and CyberArk mentors which pay attention to clean code, SOLID principles, REST API etc.
+In addition, we learned how to work with agile methodologies, got code reviews by course staff and CyberArk mentors which focused on clean code, SOLID principles, REST API etc.
 
 ## Course Exercises
 In this repo you can find all the exercises given along the course. The projects are stored in different repos.
