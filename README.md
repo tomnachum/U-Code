@@ -16,39 +16,39 @@ In this repo you can find all the exercises given along the course. The projects
 ## Sylabus
 
 <p float="left">
-    <img src="images/Sylabus.png" width="600" />
+    <img src="Public/images/Sylabus.png" width="600" />
 </p>
 
 ## Technologies and Tools
 Frontend:
 
-<img src="images/Technologies/html.png" width="100" />
-<img src="images/Technologies/css.png" width="100" />
-<img src="images/Technologies/js.png" width="100" />
+<img src="Public/images/Technologies/html.png" width="100" />
+<img src="Public/images/Technologies/css.png" width="100" />
+<img src="Public/images/Technologies/js.png" width="100" />
 
-<img src="images/Technologies/jquery.png" width="100" />
-<img src="images/Technologies/handlebars.png" width="100" />
+<img src="Public/images/Technologies/jquery.png" width="100" />
+<img src="Public/images/Technologies/handlebars.png" width="100" />
 
-<img src="images/Technologies/jest.png" width="100" />
-<img src="images/Technologies/typescript.png" width="100" />
+<img src="Public/images/Technologies/jest.png" width="100" />
+<img src="Public/images/Technologies/typescript.png" width="100" />
 
-<img src="images/Technologies/react.png" width="100" />
-<img src="images/Technologies/redux.png" width="100" />
+<img src="Public/images/Technologies/react.png" width="100" />
+<img src="Public/images/Technologies/redux.png" width="100" />
 
 Backend:
 
-<img src="images/Technologies/python.png" width="100" />
-<img src="images/Technologies/fast.png" width="100" />
+<img src="Public/images/Technologies/python.png" width="100" />
+<img src="Public/images/Technologies/fast.png" width="100" />
 
-<img src="images/Technologies/pytest.png" width="100" />
+<img src="Public/images/Technologies/pytest.png" width="100" />
 
-<img src="images/Technologies/sql.png" width="100" />
-<img src="images/Technologies/mysql.png" width="100" />
+<img src="Public/images/Technologies/sql.png" width="100" />
+<img src="Public/images/Technologies/mysql.png" width="100" />
 
 Tools:
 
-<img src="images/Technologies/git.png" width="100" />
+<img src="Public/images/Technologies/git.png" width="100" />
 
-<img src="images/Technologies/postman.png" width="100" />
+<img src="Public/images/Technologies/postman.png" width="100" />
 
-<img src="images/Technologies/vsc.png" width="100" />
+<img src="Public/images/Technologies/vsc.png" width="100" />
